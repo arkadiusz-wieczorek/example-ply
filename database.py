@@ -25,6 +25,7 @@ def parseToString(value, type):
 		if (value == "11"): return "XL"
 
 def addElement(data):
+
 	size = parseToBinary(data[2], "SIZE")
 	color = parseToBinary(data[3], "COLOR")
 	if (data[4] == "jersey"): data[4] = "jerseys"
@@ -39,7 +40,7 @@ def showDatabaseHumanReadable():
 		print(i, ":")
 		for j in db[i]:
 			color = parseToString(j[0], "COLOR")
-			size = parseToString(j[1:], "SIZE")
+			size = parseToString(j[0:-1], "SIZE")
 			print(j, "→", color, size)
 			pass
 	pass
